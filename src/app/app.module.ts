@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -12,8 +11,7 @@ import { AuthModule } from './auth/auth.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AuthModule
+    AppRoutingModule
   ],
   providers: [{ 
     provide : LocationStrategy,
