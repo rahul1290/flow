@@ -13,4 +13,18 @@
         <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Submit</button>&nbsp;
         <button type="reset" class="btn btn-warning">Cancel</button>
     </form>
+
+
+    <div>
+    <table class="table table-bordered">
+        <tr class="bg-dark text-light text-center">
+            <td><b>Sno.</b></td>
+            <td><b>Name</b></td>
+        </tr>
+        <tr class="text-center" *ngFor="let item of userList.data; index as i;">
+            <td>{{i+1}}.</td>
+            <td>{{item.NAME}}</td>
+        </tr>
+    </table>    
+    </div>
 </div>

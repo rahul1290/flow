@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     AuthModule,
     EntryformModule,
     ReportsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [{ 
     provide : LocationStrategy,
