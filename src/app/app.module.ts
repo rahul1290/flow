@@ -4,14 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { AuthModule } from './auth/auth.module';
+import { EntryformModule } from './entryform/entryform.module';
+import { ReportsModule } from './reports/reports.module';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule,
+    EntryformModule,
+    ReportsModule,
+    FormsModule
   ],
   providers: [{ 
     provide : LocationStrategy,
