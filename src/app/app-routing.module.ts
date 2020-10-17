@@ -5,13 +5,15 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { ResetPasswordComponent } from './auth/components/reset-password/reset-password.component';
 import { StoryFileComponent } from './entryform/components/story-file/story-file.component';
 import { StoryIdeaComponent } from './entryform/components/story-idea/story-idea.component';
+import { AuthguardGuard } from './guard/authguard.guard';
 import { ScriptFileDashboardComponent } from './reports/components/script-file-dashboard/script-file-dashboard.component';
 import { ScriptFileReportComponent } from './reports/components/script-file-report/script-file-report.component';
 import { StoryIdeaDashboardComponent } from './reports/components/story-idea-dashboard/story-idea-dashboard.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'/login',pathMatch:'full'},
-  { path: 'login',component:LoginComponent },
+  { path: 'login',component:LoginComponent},
+  //{ path: 'register',component:RegisterComponent ,canActivate:[AuthguardGuard]},
   { path: 'register',component:RegisterComponent },
   { path: 'reset', component: ResetPasswordComponent },
   { path: 'entryform/story-idea',component:StoryIdeaComponent },
