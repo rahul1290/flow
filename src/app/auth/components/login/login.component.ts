@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { AuthModule } from '../../auth.module';
 
@@ -14,11 +15,11 @@ import { AuthModule } from '../../auth.module';
 export class LoginComponent implements OnInit {
 
   //constructor(private httpClient:HttpClient) { }
-  constructor(public authservice:AuthService) { }
+  constructor(public authservice:AuthService,public router:Router) { }
 
   ngOnInit(){
     console.log();
-    this.getlist();
+    //this.getlist();
   }
 
    userList: any;
@@ -33,6 +34,9 @@ export class LoginComponent implements OnInit {
    loginform(loginForm:NgForm){
      this.authservice.login(loginForm).subscribe(data => {
       localStorage.setItem('secretKey', data[0].key);
+      this.router.navigate(['entryform/story-file']);
+     },()=>{
+       alert('Identity and password not matched.please try again.');
      });
    }
 }

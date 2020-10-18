@@ -13,11 +13,10 @@ import { StoryIdeaDashboardComponent } from './reports/components/story-idea-das
 const routes: Routes = [
   { path: '',redirectTo:'/login',pathMatch:'full'},
   { path: 'login',component:LoginComponent},
-  //{ path: 'register',component:RegisterComponent ,canActivate:[AuthguardGuard]},
-  { path: 'register',component:RegisterComponent },
+  { path: 'register',component:RegisterComponent ,canActivate:[AuthguardGuard]},
   { path: 'reset', component: ResetPasswordComponent },
   { path: 'entryform/story-idea',component:StoryIdeaComponent },
-  { path: 'entryform/story-file',component:StoryFileComponent },
+  { path: 'entryform/story-file',component:StoryFileComponent,canActivate:[AuthguardGuard]},
   { path: 'report/script-file-dashboard',component:ScriptFileDashboardComponent },
   { path: 'report/script-file-report',component:ScriptFileReportComponent },
   { path: 'report/story-idea-dashboard',component:StoryIdeaDashboardComponent },

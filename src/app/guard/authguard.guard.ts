@@ -13,12 +13,13 @@ export class AuthguardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):boolean{
-      if(!localStorage.getItem('secretKey')){
-        this.router.navigate(['register']);
-        return false;
-      } else {
-        this.router.navigate(['login']);
+      if(localStorage.getItem('secretKey') != null){
+        console.log('IF'+localStorage.getItem('secretKey'));
         return true;
+      } else {
+        debugger;
+        this.router.navigate(['login']);
+        return false;
       }
   }
   

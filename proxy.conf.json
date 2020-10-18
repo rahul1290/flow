@@ -1,6 +1,6 @@
 {
 	"/api/*": {
-		"target": "http://localhost:82/nfs/api/",
+		"target": "http://emp2.ibc24.in/nfs/api/",
 		"secure": false,
 		"logLevel": "debug"
 	}
