@@ -8,15 +8,11 @@ import { AuthModule } from './auth/auth.module';
 import { EntryformModule } from './entryform/entryform.module';
 import { ReportsModule } from './reports/reports.module';
 import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from './common/components/navbar/navbar.component';
-import { FooterComponent } from './common/components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
-import { AuthModule } from '../../auth.module';
 
 
 @Component({
@@ -15,7 +14,11 @@ import { AuthModule } from '../../auth.module';
 export class LoginComponent implements OnInit {
 
   //constructor(private httpClient:HttpClient) { }
-  constructor(public authservice:AuthService,public router:Router) { }
+  constructor(public authservice:AuthService,public router:Router) { 
+    if(localStorage.getItem('secretKey') != null){
+      this.router.navigate(['entryform/story-file']);
+    }
+  }
 
   ngOnInit(){
     console.log();
@@ -26,7 +29,7 @@ export class LoginComponent implements OnInit {
    getlist(){
       this.authservice.getlist().subscribe(data => {
         this.userList = data;
-        console.log(data);
+        //console.log(data);
       });
    }
   
